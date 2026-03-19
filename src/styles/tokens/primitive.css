@@ -1,0 +1,131 @@
+/* =============================================================================
+   PRIMITIVE TOKENS
+   Raw values — no semantic meaning. Never used directly in components.
+   Referenced only by semantic.css
+   ============================================================================= */
+
+:root {
+  /* ── Color palette ────────────────────────────────────────────── */
+  --color-white:       #ffffff;
+  --color-black:       #000000;
+
+  --color-zinc-50:     #fafafa;
+  --color-zinc-100:    #f4f4f5;
+  --color-zinc-200:    #e4e4e7;
+  --color-zinc-300:    #d4d4d8;
+  --color-zinc-400:    #a1a1aa;
+  --color-zinc-500:    #71717a;
+  --color-zinc-600:    #52525b;
+  --color-zinc-700:    #3f3f46;
+  --color-zinc-800:    #27272a;
+  --color-zinc-900:    #18181b;
+  --color-zinc-950:    #09090b;
+
+  /* AI / accent — violet family */
+  --color-violet-50:   #f5f3ff;
+  --color-violet-100:  #ede9fe;
+  --color-violet-200:  #ddd6fe;
+  --color-violet-300:  #c4b5fd;
+  --color-violet-400:  #a78bfa;
+  --color-violet-500:  #8b5cf6;
+  --color-violet-600:  #7c3aed;
+  --color-violet-700:  #6d28d9;
+  --color-violet-800:  #5b21b6;
+  --color-violet-900:  #4c1d95;
+  --color-violet-950:  #2e1065;
+
+  /* Collaborator palette (assigned per user index) */
+  --color-collab-1:    #3b82f6; /* blue   */
+  --color-collab-2:    #10b981; /* emerald */
+  --color-collab-3:    #f59e0b; /* amber  */
+  --color-collab-4:    #ef4444; /* red    */
+  --color-collab-5:    #ec4899; /* pink   */
+  --color-collab-6:    #14b8a6; /* teal   */
+
+  /* Semantic status */
+  --color-green-50:    #f0fdf4;
+  --color-green-500:   #22c55e;
+  --color-green-700:   #15803d;  /* 5.4:1 on white — WCAG AA text */
+  --color-red-50:      #fef2f2;
+  --color-red-500:     #ef4444;
+  --color-red-700:     #b91c1c;  /* 7.5:1 on white — WCAG AA text */
+  --color-amber-50:    #fffbeb;
+  --color-amber-600:   #d97706;  /* 3.0:1 on white — large text only */
+  --color-amber-700:   #b45309;  /* 4.7:1 on white — WCAG AA text */
+  --color-yellow-400:  #facc15;
+
+  /* ── Spacing scale (4px base) ─────────────────────────────────── */
+  --space-px:  1px;
+  --space-0:   0px;
+  --space-1:   4px;
+  --space-2:   8px;
+  --space-3:   12px;
+  --space-4:   16px;
+  --space-5:   20px;
+  --space-6:   24px;
+  --space-8:   32px;
+  --space-10:  40px;
+  --space-12:  48px;
+  --space-16:  64px;
+  --space-20:  80px;
+  --space-24:  96px;
+
+  /* ── Border radius ────────────────────────────────────────────── */
+  --radius-none: 0px;
+  --radius-xs:   2px;
+  --radius-sm:   4px;
+  --radius-md:   6px;
+  --radius-lg:   10px;
+  --radius-xl:   16px;
+  --radius-2xl:  24px;
+  --radius-full: 9999px;
+
+  /* ── Typography ───────────────────────────────────────────────── */
+  --font-sans:  'Inter', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Newsreader', Georgia, 'Times New Roman', serif;
+  --font-mono:  'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+
+  --text-xs:   0.75rem;    /* 12px */
+  --text-sm:   0.875rem;   /* 14px */
+  --text-base: 1rem;       /* 16px */
+  --text-md:   1.0625rem;  /* 17px — editor default */
+  --text-lg:   1.125rem;   /* 18px */
+  --text-xl:   1.25rem;    /* 20px */
+  --text-2xl:  1.5rem;     /* 24px */
+  --text-3xl:  1.875rem;   /* 30px */
+  --text-4xl:  2.25rem;    /* 36px */
+
+  --leading-none:    1;
+  --leading-tight:   1.25;
+  --leading-snug:    1.375;
+  --leading-normal:  1.5;
+  --leading-relaxed: 1.75;
+  --leading-loose:   2;
+
+  --tracking-tight:  -0.025em;
+  --tracking-normal: 0em;
+  --tracking-wide:   0.025em;
+
+  --weight-normal:   400;
+  --weight-medium:   500;
+  --weight-semibold: 600;
+  --weight-bold:     700;
+
+  /* ── Shadows ──────────────────────────────────────────────────── */
+  --shadow-none: none;
+  --shadow-xs:   0 1px 2px 0 rgb(0 0 0 / 0.04);
+  --shadow-sm:   0 1px 3px 0 rgb(0 0 0 / 0.08), 0 1px 2px -1px rgb(0 0 0 / 0.08);
+  --shadow-md:   0 4px 6px -1px rgb(0 0 0 / 0.08), 0 2px 4px -2px rgb(0 0 0 / 0.08);
+  --shadow-lg:   0 10px 15px -3px rgb(0 0 0 / 0.08), 0 4px 6px -4px rgb(0 0 0 / 0.08);
+  --shadow-xl:   0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+
+  /* ── Z-index scale ────────────────────────────────────────────── */
+  --z-base:        0;
+  --z-raised:      10;
+  --z-dropdown:    50;
+  --z-sticky:      100;
+  --z-overlay:     200;
+  --z-modal:       300;
+  --z-toast:       400;
+  --z-tooltip:     500;
+}

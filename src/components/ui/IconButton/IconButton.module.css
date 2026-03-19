@@ -1,0 +1,75 @@
+/* IconButton — reusable icon-only button primitive */
+
+/* ── Base ──────────────────────────────────────────────────────── */
+.iconButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  color: var(--color-text-tertiary);
+  transition:
+    background var(--duration-fast) var(--ease-out),
+    color var(--duration-fast) var(--ease-out);
+}
+
+.iconButton:disabled {
+  color: var(--color-text-disabled);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* ── Sizes ─────────────────────────────────────────────────────── */
+.xxs {
+  width: 18px;
+  height: 18px;
+  border-radius: var(--radius-xs);
+}
+
+.xs {
+  width: 22px;
+  height: 22px;
+  border-radius: var(--radius-sm);
+}
+
+.sm {
+  width: var(--btn-height-xs);   /* 24px */
+  height: var(--btn-height-xs);
+  border-radius: var(--btn-radius);
+}
+
+.md {
+  width: var(--btn-height-sm);   /* 28px */
+  height: var(--btn-height-sm);
+  border-radius: var(--btn-radius);
+}
+
+/* ── Variant: ghost (default) ──────────────────────────────────── */
+.ghost:hover {
+  background: var(--color-bg-interactive-hover);
+  color: var(--color-text-primary);
+}
+
+.ghost:focus-visible {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: var(--focus-ring-offset);
+}
+
+/* ── Variant: destructive ──────────────────────────────────────── */
+.destructive:hover {
+  background: var(--color-bg-interactive-hover);
+  color: var(--color-error);
+}
+
+.destructive:focus-visible {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: var(--focus-ring-offset);
+}
+
+/* ── Active / pressed state ────────────────────────────────────── */
+.active {
+  color: var(--color-text-primary);
+}

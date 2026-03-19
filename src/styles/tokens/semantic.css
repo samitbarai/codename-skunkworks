@@ -1,0 +1,129 @@
+/* =============================================================================
+   SEMANTIC TOKENS
+   Intent-based aliases of primitive tokens.
+   ALL theme switching (light/dark) happens only here.
+   Components never reference primitive tokens directly.
+   ============================================================================= */
+
+:root,
+[data-theme="light"] {
+  /* ── Surfaces ─────────────────────────────────────────────────── */
+  --color-bg-canvas:              var(--color-white);
+  --color-bg-surface:             var(--color-zinc-50);
+  --color-bg-elevated:            var(--color-white);
+  --color-bg-subtle:              var(--color-zinc-100);
+  --color-bg-interactive:         var(--color-zinc-100);
+  --color-bg-interactive-hover:   var(--color-zinc-200);
+  --color-bg-interactive-active:  var(--color-zinc-300);
+
+  /* ── Text ─────────────────────────────────────────────────────── */
+  --color-text-primary:           var(--color-zinc-900);
+  --color-text-secondary:         var(--color-zinc-600);
+  --color-text-tertiary:          var(--color-zinc-500);
+  --color-text-placeholder:       var(--color-zinc-400);
+  --color-text-disabled:          var(--color-zinc-300);
+  --color-text-on-accent:         var(--color-white);
+  --color-text-inverse:           var(--color-white);
+
+  /* ── Borders ──────────────────────────────────────────────────── */
+  --color-border-default:         var(--color-zinc-200);
+  --color-border-strong:          var(--color-zinc-300);
+  --color-border-focus:           var(--color-violet-500);
+  --color-border-subtle:          var(--color-zinc-100);
+
+  /* ── Accent (AI + primary actions) ───────────────────────────── */
+  --color-accent:                 var(--color-violet-500);
+  --color-accent-hover:           var(--color-violet-600);
+  --color-accent-active:          var(--color-violet-700);
+  --color-accent-subtle:          var(--color-violet-50);
+  --color-accent-subtle-hover:    var(--color-violet-100);
+  --color-accent-text:            var(--color-violet-600);
+  --color-accent-border:          var(--color-violet-200);
+
+  /* ── AI-specific ──────────────────────────────────────────────── */
+  --color-ai-bar:                 var(--color-violet-500);
+  --color-ai-bg:                  var(--color-violet-50);
+  --color-ai-border:              var(--color-violet-200);
+  --color-ai-text:                var(--color-violet-700);
+
+  /* ── Status ───────────────────────────────────────────────────── */
+  --color-success:                var(--color-green-500);
+  --color-error:                  var(--color-red-500);
+  --color-warning:                var(--color-yellow-400);
+  /* WCAG AA compliant variants for text on light bg (≥ 4.5:1) */
+  --color-success-text:           var(--color-green-700);   /* 5.4:1 on canvas */
+  --color-success-bg:             var(--color-green-50);
+  --color-error-text:             var(--color-red-700);     /* 7.5:1 on canvas */
+  --color-error-bg:               var(--color-red-50);
+  --color-warning-text:           var(--color-amber-700);   /* 4.7:1 on canvas */
+  --color-warning-bg:             var(--color-amber-50);
+
+  /* ── Focus ring (WCAG 2.4.11 — 3:1 min against adjacent colors) ─ */
+  --color-focus-ring:             var(--color-violet-600);  /* 5.3:1 on white */
+  --color-focus-ring-offset:      var(--color-bg-canvas);
+
+  /* ── Overlays ─────────────────────────────────────────────────── */
+  --color-overlay:                rgb(0 0 0 / 0.4);
+  --color-scrim:                  rgb(0 0 0 / 0.08);
+}
+
+[data-theme="dark"] {
+  /* ── Surfaces ─────────────────────────────────────────────────── */
+  --color-bg-canvas:              var(--color-zinc-950);
+  --color-bg-surface:             var(--color-zinc-900);
+  --color-bg-elevated:            var(--color-zinc-800);
+  --color-bg-subtle:              var(--color-zinc-800);
+  --color-bg-interactive:         var(--color-zinc-800);
+  --color-bg-interactive-hover:   var(--color-zinc-700);
+  --color-bg-interactive-active:  var(--color-zinc-600);
+
+  /* ── Text ─────────────────────────────────────────────────────── */
+  --color-text-primary:           var(--color-zinc-50);
+  --color-text-secondary:         var(--color-zinc-400);
+  --color-text-tertiary:          var(--color-zinc-500);
+  --color-text-placeholder:       var(--color-zinc-600);
+  --color-text-disabled:          var(--color-zinc-700);
+  --color-text-on-accent:         var(--color-white);
+  --color-text-inverse:           var(--color-zinc-900);
+
+  /* ── Borders ──────────────────────────────────────────────────── */
+  --color-border-default:         var(--color-zinc-700);
+  --color-border-strong:          var(--color-zinc-600);
+  --color-border-focus:           var(--color-violet-400);
+  --color-border-subtle:          var(--color-zinc-800);
+
+  /* ── Accent ───────────────────────────────────────────────────── */
+  --color-accent:                 var(--color-violet-400);
+  --color-accent-hover:           var(--color-violet-500);
+  --color-accent-active:          var(--color-violet-600);
+  --color-accent-subtle:          var(--color-violet-950);
+  --color-accent-subtle-hover:    var(--color-violet-900);
+  --color-accent-text:            var(--color-violet-400);
+  --color-accent-border:          var(--color-violet-800);
+
+  /* ── AI-specific ──────────────────────────────────────────────── */
+  --color-ai-bar:                 var(--color-violet-400);
+  --color-ai-bg:                  var(--color-violet-950);
+  --color-ai-border:              var(--color-violet-800);
+  --color-ai-text:                var(--color-violet-300);
+
+  /* ── Status ───────────────────────────────────────────────────── */
+  --color-success:                var(--color-green-500);
+  --color-error:                  var(--color-red-500);
+  --color-warning:                var(--color-yellow-400);
+  /* WCAG AA compliant variants for text on dark bg (≥ 4.5:1) */
+  --color-success-text:           var(--color-green-500);   /* 5.8:1 on zinc-950 */
+  --color-success-bg:             rgb(34 197 94 / 0.1);
+  --color-error-text:             var(--color-red-500);     /* 4.6:1 on zinc-950 */
+  --color-error-bg:               rgb(239 68 68 / 0.1);
+  --color-warning-text:           var(--color-yellow-400);  /* 10.7:1 on zinc-950 */
+  --color-warning-bg:             rgb(250 204 21 / 0.1);
+
+  /* ── Focus ring ───────────────────────────────────────────────── */
+  --color-focus-ring:             var(--color-violet-400);  /* 5.1:1 on zinc-950 */
+  --color-focus-ring-offset:      var(--color-bg-canvas);
+
+  /* ── Overlays ─────────────────────────────────────────────────── */
+  --color-overlay:                rgb(0 0 0 / 0.6);
+  --color-scrim:                  rgb(0 0 0 / 0.2);
+}

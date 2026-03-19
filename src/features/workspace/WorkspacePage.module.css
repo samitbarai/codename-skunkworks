@@ -1,0 +1,16 @@
+/* WorkspacePage — empty state shown before any document is selected */
+
+.workspaceEmpty {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.workspaceEmptyHint {
+  color: var(--color-text-placeholder);
+  font-family: var(--font-serif);
+  font-size: var(--text-lg);
+}

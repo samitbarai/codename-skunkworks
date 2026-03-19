@@ -1,0 +1,55 @@
+/* PaperTopBar — internal topbar for the center paper card */
+
+.paperTopBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--topbar-height);
+  padding-inline: var(--space-6);  /* 24px — matches Figma px-[24px] */
+  border-bottom: 1px solid var(--color-border-default);
+  background: var(--color-bg-elevated);
+  flex-shrink: 0;
+  gap: var(--space-4);
+  user-select: none;
+  border-radius: var(--panel-radius) var(--panel-radius) 0 0; /* top corners only */
+}
+
+.paperTopBarLeft {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-width: 0;
+  flex: 1;
+}
+
+.paperTopBarRight {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5); /* 20px — matches Figma gap-[20px] */
+  flex-shrink: 0;
+}
+
+
+.paperTopBarDocTitle {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--color-text-tertiary); /* gray — matches Figma #7a7a7a */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+  cursor: default;
+}
+
+.paperTopBarDocTitleInput {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--color-text-primary);
+  background: transparent;
+  border: 1px solid var(--color-border-focus);
+  border-radius: var(--radius-sm);
+  padding: var(--space-1) var(--space-2);
+  outline: none;
+  min-width: 0;
+  flex: 1;
+}

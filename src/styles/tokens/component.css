@@ -1,0 +1,125 @@
+/* =============================================================================
+   COMPONENT TOKENS
+   Per-component sizing, layout, and structural constants.
+   These are consumed inside *.module.css files only.
+   ============================================================================= */
+
+:root {
+  /* ── App layout ───────────────────────────────────────────────── */
+  --panel-left-width:               260px;
+  --panel-right-width:              444px;
+  --panel-gap:                      8px;   /* gap between floating card panels */
+  --panel-radius:                   12px;  /* card corner radius */
+  --topbar-height:                  48px;  /* inner topbar within each card */
+
+  /* ── Editor surface ───────────────────────────────────────────── */
+  --editor-max-width:               720px;
+  --editor-padding-x:               var(--space-16);
+  --editor-padding-y:               var(--space-12);
+  --editor-font-family:             var(--font-sans);
+  --editor-font-size:               var(--text-md);
+  --editor-line-height:             var(--leading-relaxed);
+  --editor-color:                   var(--color-text-primary);
+
+  /* ── Authorship bar ───────────────────────────────────────────── */
+  --authorship-bar-width:           3px;
+  --authorship-bar-radius:          var(--radius-full);
+  --authorship-bar-offset:          -12px; /* left offset from block edge */
+
+  /* ── Button ───────────────────────────────────────────────────── */
+  --btn-height-xs:                  24px;
+  --btn-height-sm:                  28px;
+  --btn-height-md:                  36px;
+  --btn-height-lg:                  44px;
+  --btn-radius:                     var(--radius-md);
+  --btn-padding-x-sm:               var(--space-2);
+  --btn-padding-x-md:               var(--space-3);
+  --btn-padding-x-lg:               var(--space-4);
+  --btn-font-size-sm:               var(--text-xs);
+  --btn-font-size-md:               var(--text-sm);
+  --btn-font-weight:                var(--weight-medium);
+  --btn-gap:                        var(--space-2);
+
+  /* ── Input ────────────────────────────────────────────────────── */
+  --input-height:                   36px;
+  --input-radius:                   var(--radius-md);
+  --input-border:                   1px solid var(--color-border-default);
+  --input-padding-x:                var(--space-3);
+  --input-font-size:                var(--text-sm);
+
+  /* ── Popover / Dropdown ───────────────────────────────────────── */
+  --popover-radius:                 var(--radius-lg);
+  --popover-shadow:                 var(--shadow-lg);
+  --popover-padding:                var(--space-1);
+  --popover-min-width:              160px;
+
+  /* ── Slash command menu ───────────────────────────────────────── */
+  --slash-menu-width:               280px;
+  --slash-menu-max-height:          320px;
+  --slash-menu-item-height:         36px;
+  --slash-menu-item-radius:         var(--radius-md);
+  --slash-menu-item-padding-x:      var(--space-2);
+
+  /* ── Selection toolbar ────────────────────────────────────────── */
+  --selection-toolbar-height:       36px;
+  --selection-toolbar-radius:       var(--radius-md);
+  --selection-toolbar-shadow:       var(--shadow-md);
+  --selection-toolbar-padding:      var(--space-1);
+  --selection-toolbar-gap:          var(--space-px);
+
+  /* ── AI panel ─────────────────────────────────────────────────── */
+  --ai-panel-padding:               var(--space-4);
+  --ai-panel-gap:                   var(--space-4);
+  --ai-message-radius:              var(--radius-lg);
+  --ai-reference-radius:            var(--radius-md);
+  --ai-reference-border-width:      2px;
+
+  /* ── File tree ────────────────────────────────────────────────── */
+  --filetree-item-height:           28px;
+  --filetree-indent:                var(--space-4);
+  --filetree-radius:                var(--radius-sm);
+  --filetree-font-size:             var(--text-sm);
+  --filetree-icon-size:             16px;
+
+  /* ── Avatar ───────────────────────────────────────────────────── */
+  --avatar-size-xs:                 20px;
+  --avatar-size-sm:                 24px;
+  --avatar-size-md:                 32px;
+  --avatar-size-lg:                 40px;
+  --avatar-overlap:                 -6px; /* for stacked avatars */
+
+  /* ── Tooltip ──────────────────────────────────────────────────── */
+  --tooltip-radius:                 var(--radius-sm);
+  --tooltip-padding-x:              var(--space-2);
+  --tooltip-padding-y:              var(--space-1);
+  --tooltip-font-size:              var(--text-xs);
+
+  /* ── Animation ────────────────────────────────────────────────── */
+  --duration-instant:               50ms;
+  --duration-fast:                  120ms;
+  --duration-base:                  200ms;
+  --duration-slow:                  350ms;
+  --duration-slower:                500ms;
+  --ease-spring:                    cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-out:                       cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out:                    cubic-bezier(0.45, 0, 0.55, 1);
+
+  /* ── Accessibility ────────────────────────────────────────────── */
+  /* WCAG 2.5.8 (AA): min touch target 24×24px; 2.5.5 (AAA): 44×44px */
+  --touch-target-min:               44px;
+  /* WCAG 2.4.11 (AA): focus appearance — 2px min, 3:1 contrast */
+  --focus-ring-width:               2px;
+  --focus-ring-offset:              2px;
+  --focus-ring-color:               var(--color-focus-ring);
+}
+
+/* Respect user's motion preference — disable all CSS transitions/animations */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-instant:             0ms;
+    --duration-fast:                0ms;
+    --duration-base:                0ms;
+    --duration-slow:                0ms;
+    --duration-slower:              0ms;
+  }
+}

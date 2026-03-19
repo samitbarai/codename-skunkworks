@@ -1,0 +1,63 @@
+/* AppShell — three-panel floating card layout on canvas */
+
+.appShell {
+  height: 100vh;
+  background: var(--color-bg-surface);   /* #fafafa canvas */
+  padding: var(--panel-gap);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.appShellBody {
+  display: flex;
+  flex: 1;
+  gap: var(--panel-gap);
+  overflow: hidden;
+  min-height: 0;
+}
+
+/* ── Left card — Directory ────────────────────────────────── */
+.appShellPanelLeft {
+  flex-shrink: 0;
+  height: 100%;
+  overflow: hidden;
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--panel-radius);
+  will-change: width;
+}
+
+/* ── Center card — Paper ──────────────────────────────────── */
+.appShellPanelCenter {
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-bg-elevated);  /* white */
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--panel-radius);
+  will-change: transform;
+}
+
+/* Scrollable area below the paper topbar */
+.appShellPanelCenterContent {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Right card — Jam ─────────────────────────────────────── */
+.appShellPanelRight {
+  flex-shrink: 0;
+  height: 100%;
+  overflow: hidden;
+  background: var(--color-bg-elevated);  /* white */
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--panel-radius);
+  will-change: width;
+}

@@ -1,0 +1,11 @@
+/* =============================================================================
+   GLOBAL STYLES ENTRY POINT
+   Import order matters — tokens first, then reset, then typography, animations.
+   ============================================================================= */
+
+@import "./tokens/primitive.css";
+@import "./tokens/semantic.css";
+@import "./tokens/component.css";
+@import "./reset.css";
+@import "./typography.css";
+@import "./animations.css";

@@ -1,0 +1,43 @@
+/* SelectionToolbar — floating bubble menu on text selection */
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: var(--selection-toolbar-gap);
+  padding: var(--selection-toolbar-padding);
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--selection-toolbar-radius);
+  box-shadow: var(--selection-toolbar-shadow);
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--selection-toolbar-height);
+  height: var(--selection-toolbar-height);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: background var(--duration-fast), color var(--duration-fast);
+}
+
+.btn:hover {
+  background: var(--color-bg-interactive-hover);
+  color: var(--color-text-primary);
+}
+
+.btnActive {
+  background: var(--color-bg-interactive-active);
+  color: var(--color-text-primary);
+}
+
+.divider {
+  width: 1px;
+  height: var(--selection-toolbar-height);
+  background: var(--color-border-default);
+  flex-shrink: 0;
+}

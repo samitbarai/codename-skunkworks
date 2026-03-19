@@ -1,0 +1,40 @@
+/* SignInPage — full-screen authentication entry point */
+
+.signInPage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: var(--color-bg-canvas);
+}
+
+.signInCard {
+  text-align: center;
+}
+
+.signInTitle {
+  font-family: var(--font-serif);
+  font-size: var(--text-4xl);
+  margin-bottom: var(--space-8);
+}
+
+.signInSubtitle {
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-6);
+}
+
+.signInGoogleBtn {
+  height: var(--btn-height-lg);
+  padding: 0 var(--btn-padding-x-lg);
+  background: var(--color-accent);
+  color: var(--color-text-on-accent);
+  border-radius: var(--btn-radius);
+  font-weight: var(--weight-medium);
+}
+.signInGoogleBtn:hover {
+  opacity: 0.9;
+}
+.signInGoogleBtn:focus-visible {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: var(--focus-ring-offset);
+}

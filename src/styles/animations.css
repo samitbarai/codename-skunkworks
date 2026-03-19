@@ -1,0 +1,90 @@
+/* =============================================================================
+   ANIMATIONS
+   Keyframes for CSS-only transitions.
+   Framer Motion variants live in component files (not here).
+   ============================================================================= */
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes fade-out {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+@keyframes slide-in-from-left {
+  from { transform: translateX(-100%); opacity: 0; }
+  to   { transform: translateX(0);     opacity: 1; }
+}
+
+@keyframes slide-in-from-right {
+  from { transform: translateX(100%);  opacity: 0; }
+  to   { transform: translateX(0);     opacity: 1; }
+}
+
+@keyframes slide-in-from-top {
+  from { transform: translateY(-8px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+@keyframes slide-in-from-bottom {
+  from { transform: translateY(8px);  opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+@keyframes scale-in {
+  from { transform: scale(0.95); opacity: 0; }
+  to   { transform: scale(1);    opacity: 1; }
+}
+
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+@keyframes shimmer {
+  from { background-position: -200% 0; }
+  to   { background-position:  200% 0; }
+}
+
+/* Base UI data-state attribute animations */
+
+/* Popover / dialog enter + exit via Base UI data-open/data-closed */
+[data-starting-style] { opacity: 0; transform: scale(0.95) translateY(-4px); }
+[data-ending-style]   { opacity: 0; transform: scale(0.95) translateY(-4px); }
+
+/* Tooltip */
+.tooltip-popup[data-starting-style] { opacity: 0; transform: translateY(4px); }
+.tooltip-popup[data-ending-style]   { opacity: 0; transform: translateY(4px); }
+
+/* ── Global focus-visible ─────────────────────────────────────────
+   WCAG 2.4.11 (AA): visible focus with 2px outline, 3:1 contrast.
+   :focus-visible fires only on keyboard nav — not mouse click.
+   ──────────────────────────────────────────────────────────────── */
+:focus-visible {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: var(--focus-ring-offset);
+}
+
+/* Elements that manage their own focus ring */
+[data-focus-visible="false"]:focus-visible,
+.no-focus-ring:focus-visible {
+  outline: none;
+}
+
+/* ── Reduced motion ───────────────────────────────────────────────
+   Collapse all CSS transitions/animations for users who prefer it.
+   Framer Motion: use useReducedMotion() hook in animated components.
+   ──────────────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration:        0.01ms !important;
+    animation-iteration-count: 1      !important;
+    transition-duration:       0.01ms !important;
+    scroll-behavior:           auto   !important;
+  }
+}

@@ -1,0 +1,104 @@
+/* =============================================================================
+   TYPOGRAPHY
+   Base type scale and font-face declarations.
+   ============================================================================= */
+
+/* Inter — system fallback covers most cases; load from Google Fonts or self-host */
+/* @font-face declarations go here when self-hosting fonts in /public/fonts/ */
+
+/* Newsreader for the editor body */
+/* @font-face {
+  font-family: 'Newsreader';
+  src: url('/fonts/Newsreader-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+} */
+
+/* Base prose scale — used inside .ProseMirror */
+.prose-editor {
+  font-family: var(--editor-font-family);
+  font-size: var(--editor-font-size);
+  line-height: var(--editor-line-height);
+  color: var(--color-text-primary);
+
+  h1 {
+    font-size: var(--text-4xl);
+    font-weight: var(--weight-bold);
+    line-height: var(--leading-tight);
+    letter-spacing: var(--tracking-tight);
+    margin-block-end: var(--space-4);
+  }
+
+  h2 {
+    font-size: var(--text-2xl);
+    font-weight: var(--weight-semibold);
+    line-height: var(--leading-tight);
+    margin-block-end: var(--space-3);
+  }
+
+  h3 {
+    font-size: var(--text-xl);
+    font-weight: var(--weight-semibold);
+    line-height: var(--leading-snug);
+    margin-block-end: var(--space-2);
+  }
+
+  p {
+    margin-block-end: var(--space-4);
+  }
+
+  strong { font-weight: var(--weight-semibold); }
+  em     { font-style: italic; }
+
+  code {
+    font-family: var(--font-mono);
+    font-size: 0.875em;
+    background: var(--color-bg-subtle);
+    border: 1px solid var(--color-border-default);
+    border-radius: var(--radius-xs);
+    padding: 0.1em 0.3em;
+  }
+
+  pre {
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    background: var(--color-bg-subtle);
+    border: 1px solid var(--color-border-default);
+    border-radius: var(--radius-md);
+    padding: var(--space-4);
+    overflow-x: auto;
+    margin-block-end: var(--space-4);
+
+    code {
+      background: transparent;
+      border: none;
+      padding: 0;
+      font-size: inherit;
+    }
+  }
+
+  blockquote {
+    border-left: 3px solid var(--color-accent);
+    padding-left: var(--space-4);
+    color: var(--color-text-secondary);
+    font-style: italic;
+    margin-block-end: var(--space-4);
+  }
+
+  ul, ol {
+    list-style: revert;
+    padding-left: var(--space-6);
+    margin-block-end: var(--space-4);
+
+    li { margin-block-end: var(--space-1); }
+  }
+
+  a {
+    color: var(--color-accent-text);
+    text-decoration: underline;
+    text-decoration-color: var(--color-accent-border);
+    text-underline-offset: 2px;
+    &:hover { color: var(--color-accent-hover); }
+  }
+}
