@@ -3,7 +3,8 @@
 
 **Codename:** Skunkworks
 **Status:** Draft | **Version:** 0.1 | **Date:** March 19, 2026
-**Author:** Samit (Product Manager)
+**Author:** Samit
+**Team:** Shekhar, Anirudh, Harsh, Arnab, Samit
 
 > *A distraction-free, cloud-first writing surface where humans and AI agents collaborate in real time.*
 
