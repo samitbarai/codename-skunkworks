@@ -2,7 +2,7 @@
 ## Collaborative AI-Native Document Editor
 
 **Codename:** Skunkworks
-**Status:** Draft | **Version:** 0.2 | **Date:** March 19, 2026
+**Status:** Draft | **Version:** 0.3 | **Date:** March 19, 2026
 
 > *A distraction-free, cloud-first writing surface where humans and AI agents collaborate in real time.*
 
@@ -179,16 +179,19 @@ CRDT-based (**Y.js**) for conflict-free real-time collaboration. Y.js integrates
 
 ### Backend & Data
 
-- Cloud-first: documents stored server-side with real-time sync.
-- Auth: email + social login (Google, GitHub). Magic link for frictionless onboarding.
-- Storage: PostgreSQL for metadata + document tree. Y.js document state in object storage (S3-compatible).
-- AI integration: server-side proxy to LLM APIs. Manages API keys (BYOM keys encrypted at rest). Streams responses back to client.
+For the POC/MVP, we prioritize speed-to-launch and minimal infrastructure overhead. **Convex** is the recommended backend platform — it provides real-time reactive queries, built-in auth, file storage, and serverless functions out of the box, eliminating the need to stitch together a database, WebSocket server, and API layer separately.
+
+- **Convex** handles: real-time data sync, document metadata & file tree, user auth (integrates with Clerk/Auth0 for social login + magic links), file storage for assets/images, and serverless functions for AI proxy logic.
+- **Y.js** still manages the CRDT document state for the editor (Convex handles the persistence layer for Y.js document snapshots).
+- **AI integration:** Convex actions (serverless functions) proxy requests to LLM APIs. Manages API keys (BYOM keys encrypted at rest). Streams responses back to client via Convex's real-time layer.
+- **Migration path:** If the product outgrows Convex (scale, cost, or customization needs), the architecture can migrate to a self-hosted stack (PostgreSQL + custom WebSocket server + S3) without rewriting the frontend or editor layer.
 
 ### Frontend
 
-- React (Next.js) web application. Mobile-responsive but desktop-first.
+- React SPA (Vite) — no server-side rendering needed. Desktop-first, mobile-responsive.
 - TipTap or BlockNote editor component.
 - Tailwind CSS for styling. Custom design system for the paper-like aesthetic.
+- Convex React client for real-time data binding (file tree, comments, presence, AI responses).
 
 ---
 
