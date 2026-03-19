@@ -2,7 +2,7 @@
 ## Collaborative AI-Native Document Editor
 
 **Codename:** Skunkworks
-**Status:** Draft | **Version:** 0.1 | **Date:** March 19, 2026
+**Status:** Draft | **Version:** 0.2 | **Date:** March 19, 2026
 
 > *A distraction-free, cloud-first writing surface where humans and AI agents collaborate in real time.*
 
