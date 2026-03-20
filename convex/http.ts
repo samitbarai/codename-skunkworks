@@ -14,6 +14,7 @@ auth.addHttpRoutes(http);
 const ALLOWED_ORIGINS = new Set([
   process.env.SITE_URL ?? "",
   "http://localhost:5173",
+  "http://localhost:5174",
   "http://localhost:3000",
 ]);
 

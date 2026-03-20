@@ -72,8 +72,8 @@
   --color-bg-canvas:              var(--color-zinc-950);
   --color-bg-surface:             var(--color-zinc-900);
   --color-bg-elevated:            var(--color-zinc-800);
-  --color-bg-subtle:              var(--color-zinc-800);
-  --color-bg-interactive:         var(--color-zinc-800);
+  --color-bg-subtle:              var(--color-zinc-900);
+  --color-bg-interactive:         var(--color-zinc-700);
   --color-bg-interactive-hover:   var(--color-zinc-700);
   --color-bg-interactive-active:  var(--color-zinc-600);
 
@@ -81,7 +81,7 @@
   --color-text-primary:           var(--color-zinc-50);
   --color-text-secondary:         var(--color-zinc-400);
   --color-text-tertiary:          var(--color-zinc-500);
-  --color-text-placeholder:       var(--color-zinc-600);
+  --color-text-placeholder:       var(--color-zinc-500);
   --color-text-disabled:          var(--color-zinc-700);
   --color-text-on-accent:         var(--color-white);
   --color-text-inverse:           var(--color-zinc-900);

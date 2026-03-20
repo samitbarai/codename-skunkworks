@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { motion, AnimatePresence, LayoutGroup } from "framer-motion";
 import { useApp } from "@/store/AppStore";
 import { PaperTopBar } from "./PaperTopBar";
@@ -30,12 +31,23 @@ const slideRight = {
 };
 
 export function AppShell({ children }: { children: React.ReactNode }) {
-  const { leftPanelOpen, rightPanelOpen } = useApp();
+  const { leftPanelOpen, rightPanelOpen, focusMode, toggleFocus } = useApp();
+
+  useEffect(() => {
+    function onKeyDown(e: KeyboardEvent) {
+      if (e.ctrlKey && e.key === "p") {
+        e.preventDefault();
+        toggleFocus();
+      }
+    }
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [toggleFocus]);
 
   return (
-    <div className={styles.appShell}>
+    <div className={`${styles.appShell}${focusMode ? ` ${styles.appShellFocused}` : ""}`}>
       <LayoutGroup>
-        <div className={styles.appShellBody}>
+        <div className={`${styles.appShellBody}${focusMode ? ` ${styles.appShellBodyFocused}` : ""}`}>
           {/* Left card — Directory */}
           <AnimatePresence initial={false}>
             {leftPanelOpen && (
@@ -55,7 +67,8 @@ export function AppShell({ children }: { children: React.ReactNode }) {
           {/* Center card — Paper */}
           <motion.div
             layout
-            className={styles.appShellPanelCenter}
+            layoutDependency={`${leftPanelOpen}-${rightPanelOpen}-${focusMode}`}
+            className={`${styles.appShellPanelCenter}${focusMode ? ` ${styles.appShellPanelCenterFocused}` : ""}`}
             transition={{ layout: { duration: DURATION_OPEN, ease: easeOpen } }}
           >
             <PaperTopBar />

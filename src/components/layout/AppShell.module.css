@@ -3,7 +3,6 @@
 .appShell {
   height: 100vh;
   background: var(--color-bg-surface);   /* #fafafa canvas */
-  padding: var(--panel-gap);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -12,9 +11,27 @@
 .appShellBody {
   display: flex;
   flex: 1;
-  gap: var(--panel-gap);
   overflow: hidden;
   min-height: 0;
+}
+
+/* ── Focus mode — both panels hidden ─────────────────────── */
+.appShellBodyFocused {
+  justify-content: center;
+}
+
+.appShellPanelCenterFocused {
+  flex: 0 1 960px;
+  max-width: 960px;
+  margin-block: 20px;
+  border-radius: 20px;
+  box-shadow: var(--panel-focus-shadow);
+}
+
+.appShellFocused {
+  background-image: url('/fonts/bgskunk.png');
+  background-size: cover;
+  background-position: center;
 }
 
 /* ── Left card — Directory ────────────────────────────────── */
@@ -23,8 +40,7 @@
   height: 100%;
   overflow: hidden;
   background: var(--color-bg-elevated);
-  border: 1px solid var(--color-border-default);
-  border-radius: var(--panel-radius);
+  border-right: 1px solid var(--color-border-default);
   will-change: width;
 }
 
@@ -32,14 +48,10 @@
 .appShellPanelCenter {
   flex: 1;
   min-width: 0;
-  height: 100%;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   background: var(--color-bg-elevated);  /* white */
-  border: 1px solid var(--color-border-default);
-  border-radius: var(--panel-radius);
-  will-change: transform;
 }
 
 /* Scrollable area below the paper topbar */
@@ -57,7 +69,6 @@
   height: 100%;
   overflow: hidden;
   background: var(--color-bg-elevated);  /* white */
-  border: 1px solid var(--color-border-default);
-  border-radius: var(--panel-radius);
+  border-left: 1px solid var(--color-border-default);
   will-change: width;
 }

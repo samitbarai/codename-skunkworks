@@ -6,6 +6,8 @@
 
 :root {
   /* ── App layout ───────────────────────────────────────────────── */
+  --panel-focus-shadow:             0 8px 40px -8px rgb(0 0 0 / 0.12), 0 2px 12px -2px rgb(0 0 0 / 0.06);
+
   --panel-left-width:               260px;
   --panel-right-width:              444px;
   --panel-gap:                      8px;   /* gap between floating card panels */

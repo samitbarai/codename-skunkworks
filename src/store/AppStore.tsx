@@ -2,6 +2,7 @@ import {
   createContext,
   useContext,
   useEffect,
+  useRef,
   useState,
   useCallback,
   type ReactNode,
@@ -36,6 +37,8 @@ export interface AppState {
   setActiveDoc: (id: string | null) => void;
   toggleLeft: () => void;
   toggleRight: () => void;
+  focusMode: boolean;
+  toggleFocus: () => void;
 }
 
 // ─── Defaults ─────────────────────────────────────────────────────────────────
@@ -90,6 +93,8 @@ export function AppStoreProvider({ children }: { children: ReactNode }) {
   const [leftPanelOpen, setLeft] = useState(prefs.leftOpen);
   const [rightPanelOpen, setRight] = useState(prefs.rightOpen);
   const [activeDocId, setActiveDocId] = useState<string | null>(null);
+  const [focusMode, setFocusMode] = useState(false);
+  const savedPanels = useRef({ left: prefs.leftOpen, right: prefs.rightOpen });
 
   // Persist panel prefs
   useEffect(() => {
@@ -148,8 +153,42 @@ export function AppStoreProvider({ children }: { children: ReactNode }) {
   );
 
   const setActiveDoc = useCallback((id: string | null) => setActiveDocId(id), []);
-  const toggleLeft = useCallback(() => setLeft((v) => !v), []);
-  const toggleRight = useCallback(() => setRight((v) => !v), []);
+  const toggleLeft = useCallback(() => {
+    if (focusMode) {
+      savedPanels.current = { ...savedPanels.current, left: true };
+      setFocusMode(false);
+      return;
+    }
+    setLeft((v) => !v);
+  }, [focusMode]);
+
+  const toggleRight = useCallback(() => {
+    if (focusMode) {
+      savedPanels.current = { ...savedPanels.current, right: true };
+      setFocusMode(false);
+      return;
+    }
+    setRight((v) => !v);
+  }, [focusMode]);
+
+  const toggleFocus = useCallback(() => {
+    setFocusMode((v) => {
+      if (!v) {
+        savedPanels.current = { left: leftPanelOpen, right: rightPanelOpen };
+      }
+      return !v;
+    });
+  }, [leftPanelOpen, rightPanelOpen]);
+
+  useEffect(() => {
+    if (focusMode) {
+      setLeft(false);
+      setRight(false);
+    } else {
+      setLeft(savedPanels.current.left);
+      setRight(savedPanels.current.right);
+    }
+  }, [focusMode]);
 
   return (
     <AppContext.Provider
@@ -167,6 +206,8 @@ export function AppStoreProvider({ children }: { children: ReactNode }) {
         setActiveDoc,
         toggleLeft,
         toggleRight,
+        focusMode,
+        toggleFocus,
       }}
     >
       {children}
